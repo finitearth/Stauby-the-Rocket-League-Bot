@@ -1,9 +1,11 @@
 import rlgym
 from stable_baselines3 import PPO
+from main import CustomObsBuilder, CustomActionParser
 
-env = rlgym.make(game_speed=1)
+env = rlgym.make(game_speed=1, obs_builder=CustomObsBuilder())
 model = PPO("MlpPolicy", env=env, verbose=1)
-model = model.load("models/v0")
+model = model.load("models/v0_1")
+action_parser = CustomActionParser()
 
 while True:
     obs = env.reset()
@@ -11,6 +13,7 @@ while True:
 
     while not done:
         action, _ = model.predict(obs)
+        action = action_parser.parse_actions(action, None)
 
         next_obs, reward, done, gameinfo = env.step(action)
         obs = next_obs

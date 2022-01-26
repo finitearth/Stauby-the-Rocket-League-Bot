@@ -1,0 +1,5 @@
+rlgym_compat
+rlgym
+stable_baselines3
+torch
+pickle5

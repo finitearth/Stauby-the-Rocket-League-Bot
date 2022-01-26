@@ -52,10 +52,13 @@ class CustomActionParser(ContinuousAction):
 
     def parse_actions(self, actions, state):
         if len(actions.shape) == 1:
-            actions = actions.reshape((-1, 3))
-        filled_action = np.zeros((actions.shape[0], 8))
-        # Throttle, Steer, Boost
-        filled_action[..., [0, 1, 6]] = (actions[..., 0]+1)/2, actions[..., 1], actions[..., 2]>0
+            filled_action = np.zeros(8)
+            filled_action[[0, 1, 6]] = (actions[0] + 1) / 2, actions[1], actions[2] > 0
+
+        else:
+            filled_action = np.zeros((actions.shape[0], 8))
+            # Throttle, Steer, Boost
+            filled_action[..., [0, 1, 6]] = (actions[..., 0] + 1) / 2, actions[..., 1], actions[..., 2] > 0
 
         return filled_action
 
@@ -94,21 +97,21 @@ class CustomObsBuilder(ObsBuilder):
         return np.concatenate(obs)
 
 
-# Make the default rlgym environment
-env = rlgym.make(reward_fn=Reward(),
-                 game_speed=100,
-                 terminal_conditions=(NoTouchTimeoutCondition(500), GoalScoredCondition()),
-                 self_play=False,
-                 state_setter=RandomState(),
-                 action_parser=CustomActionParser(),
-                 obs_builder=CustomObsBuilder())
+if __name__ == '__main__':
+    # Make the default rlgym environment
+    env = rlgym.make(reward_fn=Reward(),
+                     game_speed=100,
+                     terminal_conditions=(NoTouchTimeoutCondition(500), GoalScoredCondition()),
+                     self_play=False,
+                     state_setter=RandomState(),
+                     action_parser=CustomActionParser(),
+                     obs_builder=CustomObsBuilder())
+    # Initialize PPO from stable_baselines3
+    policy_kwargs = dict(activation_fn=torch.tanh,
+                         net_arch=[dict(pi=[8, 8, 4], vf=[8, 4, 4])])
+    model = PPO("MlpPolicy", env=env, verbose=1)
 
-# Initialize PPO from stable_baselines3
-policy_kwargs = dict(activation_fn=torch.tanh,
-                     net_arch=[dict(pi=[8, 8, 4], vf=[8, 4, 4])])
-model = PPO("MlpPolicy", env=env, verbose=1)
+    # Train our agent!
+    model.learn(total_timesteps=int(1e7))
 
-# Train our agent!
-model.learn(total_timesteps=int(1e7))
-
-model.save("models/v0_2")
+    model.save("models/v0_2")
