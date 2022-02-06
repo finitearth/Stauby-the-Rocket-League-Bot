@@ -57,13 +57,13 @@ class PolarObsBuilder(CustomObsBuilder):
         return gym.spaces.Box(-10, +10, shape=(6,))
 
     def build_obs(self, player, state, previous_action):
-        inverted = False#player.team_num == common_values.ORANGE_TEAM
+        inverted = player.team_num == common_values.ORANGE_TEAM
         ball = state.inverted_ball if inverted else state.ball
         player_car = player.inverted_car_data if inverted else player.car_data
 
         player_angle = rlm.quat_to_euler(player_car.quaternion)[1]
         player_linear_vel = np.sqrt(np.sum(player_car.linear_velocity ** 2))
-        player_ang_vel = player_car.angular_velocity[1]
+        player_ang_vel = player_car.angular_velocity.sum()
 
         ball_vel = np.sqrt(np.sum(ball.linear_velocity ** 2))
 

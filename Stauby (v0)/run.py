@@ -24,6 +24,5 @@ if __name__ == '__main__':
     except ImportError:
         subprocess.call([sys.executable, "-m", "pip", "install", '-r', 'requirements.txt', '--upgrade', '--upgrade-strategy=eager'])
 
-
     from rlbot import runner
     runner.main()
