@@ -1,6 +1,6 @@
 import rlgym
 from stable_baselines3 import PPO
-from main import CustomObsBuilder, CustomActionParser
+from train import CustomObsBuilder, CustomActionParser
 
 env = rlgym.make(game_speed=1, obs_builder=CustomObsBuilder())
 model = PPO("MlpPolicy", env=env, verbose=1)

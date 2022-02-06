@@ -1,7 +1,8 @@
-from rlbot.messages.flat.QuickChatSelection import QuickChatSelection
+import numpy as np
 
-# 47 (skill not found)
-# 44 (waste of cpu cycles)
-# 64 (yeet)
-# 12 (what a save)
-# 17 (omg)
+actions = np.array([1, 2])
+
+
+actions = actions.reshape(-1, 2)
+filled_action = np.zeros((actions.shape[0], 8))
+filled_action[:, [0, 1]] = actions[..., 0], actions[..., 1]
