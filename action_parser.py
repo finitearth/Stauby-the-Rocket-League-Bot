@@ -12,8 +12,9 @@ class CustomActionParser(ContinuousAction):
         return gym.spaces.Box(-1, 1, shape=(self.action_dim,))
 
     def parse_actions(self, action_logits, state):
+        action_logits[..., 1] *= 0.1
         actions = np.tanh(action_logits).reshape(-1, 2)
         filled_action = np.zeros((actions.shape[0], 8))
-        filled_action[..., [0, 1]] = actions#[..., 0], actions[..., 1]
+        filled_action[..., [0, 1]] = actions
 
         return filled_action

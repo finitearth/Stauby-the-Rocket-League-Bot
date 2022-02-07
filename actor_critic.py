@@ -20,7 +20,6 @@ class ActorCritic(ActorCriticPolicy):
         distribution = self.action_dist.proba_distribution(mean_action, self.log_std)
         actions = distribution.get_actions(deterministic=deterministic)
         log_prob = distribution.log_prob(actions)
-        # actions = torch.tanh(actions)
 
         return actions, values, log_prob
 
