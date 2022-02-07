@@ -11,6 +11,7 @@ GOAL_POSITION = np.array([0, 4096, 0])
 class CustomObsBuilder(ObsBuilder):
     def __init__(self, pos_coef=1 / 2300, ang_coef=1 / math.pi, lin_vel_coef=1 / 2300, ang_vel_coef=1 / math.pi):
         super().__init__()
+        self.obs_dim = 14
         self.POS_COEF = pos_coef
         self.ANG_COEF = ang_coef
         self.LIN_VEL_COEF = lin_vel_coef
@@ -20,7 +21,7 @@ class CustomObsBuilder(ObsBuilder):
         pass
 
     def get_observation_space(self):
-        return gym.spaces.Box(-1, 1, shape=(14,))
+        return gym.spaces.Box(-1, 1, shape=(self.obs_dim,))
 
     def build_obs(self, player, state, previous_action):
         inverted = player.team_num == common_values.ORANGE_TEAM
@@ -52,9 +53,10 @@ def get_polar(diff_vec):
 class PolarObsBuilder(CustomObsBuilder):
     def __init__(self):
         super().__init__()
+        self.obs_dim = 6
 
     def get_observation_space(self):
-        return gym.spaces.Box(-10, +10, shape=(6,))
+        return gym.spaces.Box(-10, +10, shape=(self.obs_dim,))
 
     def build_obs(self, player, state, previous_action):
         inverted = player.team_num == common_values.ORANGE_TEAM

@@ -14,8 +14,8 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 obs_builder = PolarObsBuilder() #CustomObsBuilder
 action_parser = CustomActionParser()
-obs_space = obs_builder.get_observation_space().shape[0]
-action_space = action_parser.get_action_space().shape[0]
+obs_space = obs_builder.obs_dim
+action_space = action_parser.action_dim
 state_setter = StateSetter()
 
 # HyperParams
