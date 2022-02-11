@@ -1,0 +1,23 @@
+Setting up Otpim: SGD
+lr: <function constant_fn.<locals>.func at 0x00000236E9FD55E0>
+other params: {}
+GL HF! :)
+Eval num_timesteps=10000, episode_reward=0.02 +/- 0.05
+Episode length: 500.00 +/- 0.00
+New best mean reward!
+Eval num_timesteps=20000, episode_reward=-0.04 +/- 0.04
+Episode length: 500.00 +/- 0.00
+Eval num_timesteps=30000, episode_reward=0.18 +/- 0.17
+Episode length: 507.80 +/- 15.60
+New best mean reward!
+Eval num_timesteps=40000, episode_reward=-0.12 +/- 0.19
+Episode length: 500.00 +/- 0.00
+Eval num_timesteps=50000, episode_reward=0.06 +/- 0.12
+Episode length: 500.00 +/- 0.00
+Eval num_timesteps=60000, episode_reward=-0.04 +/- 0.08
+Episode length: 500.00 +/- 0.00
+Eval num_timesteps=70000, episode_reward=-0.02 +/- 0.07
+Episode length: 500.00 +/- 0.00
+Eval num_timesteps=80000, episode_reward=-0.01 +/- 0.25
+Episode length: 415.20 +/- 169.60
+Eval num_timesteps=90000, episode_reward=0.06 +/- 0.09

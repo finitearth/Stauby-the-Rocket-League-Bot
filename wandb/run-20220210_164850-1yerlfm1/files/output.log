@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "C:\Users\tzehl\OneDrive\Dokumente\GitHub\Stauby-the-Rocket-League-Bot\train.py", line 50, in <module>
+    model = get_model(env, use_wandb=use_wandb)
+  File "C:\Users\tzehl\OneDrive\Dokumente\GitHub\Stauby-the-Rocket-League-Bot\actor_critic.py", line 19, in get_model
+    learning_rate=wandb.config["lr"],
+KeyError: 'lr'

@@ -6,30 +6,44 @@ from rlgym.utils.common_values import CEILING_Z, BALL_MAX_SPEED, CAR_MAX_SPEED, 
     BLUE_GOAL_CENTER, ORANGE_GOAL_BACK, ORANGE_GOAL_CENTER, BALL_RADIUS, ORANGE_TEAM
 from rlgym.utils.math import cosine_similarity
 
+import utils
+
+BLUE_GOAL = (np.array(BLUE_GOAL_BACK) + np.array(BLUE_GOAL_CENTER)) / 2
+ORANGE_GOAL = (np.array(ORANGE_GOAL_BACK) + np.array(ORANGE_GOAL_CENTER)) / 2
+MAX_DRIVING_SPEED = 1410
+
 
 class Reward(RewardFunction):
     def __init__(self, own_goal=False):
         super().__init__()
-        self.own_goal = own_goal
         self.liu = LiuDistanceBallToGoalReward()
-        self.vel = VelocityPlayerToBallReward()
+        self.vel = VelocityPlayerToBallReward(use_scalar_projection=True)
         # self.boost = SaveBoostReward()
-        self.goal = EventReward(team_goal=1., concede=-2., touch=500., shot=10000., save=0., demo=0.)
+        self.goal = EventReward(team_goal=5., concede=-1., touch=1., shot=10., save=0., demo=0.)
         # self.driving_to_ball = FaceBallReward()
+        self.last_state_quality = None
 
     def get_reward(self, player, state, previous_action):
-        goal_reward = self.goal.get_reward(player, state, previous_action)
-        liu_reward = self.liu.get_reward(player, state, previous_action)
-        vel_reward = self.vel.get_reward(player, state, previous_action)
-        # boost_reward = self.boost.get_reward(player, state, previous_action)
-        # driving_reward = -self.driving_to_ball.get_reward(player, state, previous_action) # Minus weil wegen ka
-
-        reward = goal_reward + .2 * liu_reward + .2 * vel_reward  # + .1 * driving_reward#.0 * boost_reward +
-        reward = (reward / 0.4 - 1) / 2000
+        current_quality = self.get_state_quality(player, state, previous_action)
+        reward = current_quality - self.last_state_quality if self.last_state_quality else 0
+        self.last_state_quality = current_quality
+        reward += self.goal.get_reward(player, state, previous_action)
 
         return reward
 
+    def get_state_quality(self, player, state, previous_action):
+        dist_to_wall = utils.calculate_distance_to_wall(player.car_data.position)
+        dist_to_wall_quality = -np.exp(1 - .05*dist_to_wall)/3 if dist_to_wall < 30 else 0
+        liu_reward = self.liu.get_reward(player, state, previous_action)/3
+        vel_reward = self.vel.get_reward(player, state, previous_action)/24.8
+        # boost_reward = self.boost.get_reward(player, state, previous_action)
+        # driving_reward = -self.driving_to_ball.get_reward(player, state, previous_action) # Minus weil wegen ka
+
+        quality =  liu_reward + vel_reward + dist_to_wall_quality # + .1 * driving_reward#.0 * boost_reward +
+        return quality
+
     def reset(self, initial_state):
+        self.last_state_quality = None
         self.liu.reset(initial_state)
         self.vel.reset(initial_state)
         # self.boost.reset(initial_state)
@@ -38,9 +52,6 @@ class Reward(RewardFunction):
 
 
 class NectoRewardFunction(RewardFunction):
-    BLUE_GOAL = (np.array(BLUE_GOAL_BACK) + np.array(BLUE_GOAL_CENTER)) / 2
-    ORANGE_GOAL = (np.array(ORANGE_GOAL_BACK) + np.array(ORANGE_GOAL_CENTER)) / 2
-
     def __init__(
             self,
             team_spirit=0.3,
@@ -49,9 +60,9 @@ class NectoRewardFunction(RewardFunction):
             goal_speed_bonus_w=2.5,
             goal_dist_bonus_w=2.5,
             demo_w=5,
-            dist_w=0.75,  # Changed from 1
+            dist_w=0.75,
             align_w=0.5,
-            boost_w=1,
+            boost_w=0, # erstmal auf 0 -> kein boost wird benutzt mensch
             touch_height_w=1,
             touch_accel_w=0.25,
             opponent_punish_w=1
@@ -75,10 +86,10 @@ class NectoRewardFunction(RewardFunction):
         self.player_qualities = None
         self.rewards = None
 
-    def _state_qualities(self, state):
+    def calculate_state_qualities(self, state):
         ball_pos = state.ball.position
-        state_quality = 0.5 * self.goal_dist_w * (np.exp(-np.linalg.norm(self.ORANGE_GOAL - ball_pos) / CAR_MAX_SPEED)
-                                                  - np.exp(-np.linalg.norm(self.BLUE_GOAL - ball_pos) / CAR_MAX_SPEED))
+        state_quality = 0.5 * self.goal_dist_w * (np.exp(-np.linalg.norm(ORANGE_GOAL - ball_pos) / CAR_MAX_SPEED)
+                                                  - np.exp(-np.linalg.norm(BLUE_GOAL - ball_pos) / CAR_MAX_SPEED))
         player_qualities = np.zeros(len(state.players))
         for i, player in enumerate(state.players):
             pos = player.car_data.position
@@ -88,18 +99,16 @@ class NectoRewardFunction(RewardFunction):
                                - cosine_similarity(ball_pos - pos, BLUE_GOAL_BACK - pos))
             if player.team_num == ORANGE_TEAM:
                 alignment *= -1
-            liu_dist = np.exp(-np.linalg.norm(ball_pos - pos) / 1410)  # Max driving speed
+            liu_dist = np.exp(-np.linalg.norm(ball_pos - pos) / MAX_DRIVING_SPEED)  # Max driving speed
             player_qualities[i] = (self.dist_w * liu_dist + self.align_w * alignment
                                    + self.boost_w * np.sqrt(player.boost_amount))
-
-            # TODO use only dist of closest player for entire team
 
         # Half state quality because it is applied to both teams, thus doubling it in the reward distributing
         return state_quality / 2, player_qualities
 
     def _calculate_rewards(self, state):
         # Calculate rewards, positive for blue, negative for orange
-        state_quality, player_qualities = self._state_qualities(state)
+        state_quality, player_qualities = self.calculate_state_qualities(state)
         player_rewards = np.zeros_like(player_qualities)
 
         for i, player in enumerate(state.players):
@@ -181,7 +190,7 @@ class NectoRewardFunction(RewardFunction):
         self.last_state = None
         self.rewards = None
         self.current_state = initial_state
-        self.state_quality, self.player_qualities = self._state_qualities(initial_state)
+        self.state_quality, self.player_qualities = self.calculate_state_qualities(initial_state)
 
     def get_reward(self, player, state, previous_action):
         if state != self.current_state:

@@ -1,0 +1,29 @@
+Using cpu device
+Setting up Otpim: SGD
+lr: <function constant_fn.<locals>.func at 0x000001EBF9674670>
+other params: {}
+GL HF! :)
+------------------------------------
+| rollout/           |             |
+|    ep_len_mean     | 500         |
+|    ep_rew_mean     | 0.010896061 |
+| time/              |             |
+|    fps             | 246         |
+|    iterations      | 1           |
+|    time_elapsed    | 16          |
+|    total_timesteps | 4096        |
+------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\tzehl\OneDrive\Dokumente\GitHub\Stauby-the-Rocket-League-Bot\train.py", line 52, in <module>
+    model.learn(total_timesteps=1e7)
+  File "C:\Users\tzehl\OneDrive\Dokumente\GitHub\schmalegg_hbf_abfahrt\venv\lib\site-packages\stable_baselines3\ppo\ppo.py", line 299, in learn
+    return super(PPO, self).learn(
+  File "C:\Users\tzehl\OneDrive\Dokumente\GitHub\schmalegg_hbf_abfahrt\venv\lib\site-packages\stable_baselines3\common\on_policy_algorithm.py", line 257, in learn
+    self.train()
+  File "C:\Users\tzehl\OneDrive\Dokumente\GitHub\schmalegg_hbf_abfahrt\venv\lib\site-packages\stable_baselines3\ppo\ppo.py", line 199, in train
+    values, log_prob, entropy = self.policy.evaluate_actions(rollout_data.observations, actions)
+  File "C:\Users\tzehl\OneDrive\Dokumente\GitHub\Stauby-the-Rocket-League-Bot\actor_critic.py", line 67, in evaluate_actions
+    x = self.feature_dist(obs)
+  File "C:\Users\tzehl\OneDrive\Dokumente\GitHub\schmalegg_hbf_abfahrt\venv\lib\site-packages\torch\nn\modules\module.py", line 1177, in __getattr__
+    raise AttributeError("'{}' object has no attribute '{}'".format(
+AttributeError: 'ActorCritic' object has no attribute 'feature_dist'

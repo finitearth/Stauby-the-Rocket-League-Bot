@@ -1,0 +1,103 @@
+Setting up Otpim: SGD
+lr: <function constant_fn.<locals>.func at 0x000002472F875670>
+other params: {}
+GL HF! :)
+Eval num_timesteps=10000, episode_reward=-0.14 +/- 0.18
+Episode length: 500.00 +/- 0.00
+New best mean reward!
+Eval num_timesteps=20000, episode_reward=0.01 +/- 0.01
+Episode length: 500.00 +/- 0.00
+New best mean reward!
+Eval num_timesteps=30000, episode_reward=0.16 +/- 0.33
+Episode length: 564.80 +/- 129.60
+New best mean reward!
+Eval num_timesteps=40000, episode_reward=-0.10 +/- 0.20
+Episode length: 500.00 +/- 0.00
+Eval num_timesteps=50000, episode_reward=-0.20 +/- 0.19
+Episode length: 500.00 +/- 0.00
+Eval num_timesteps=60000, episode_reward=-0.25 +/- 0.22
+Episode length: 500.00 +/- 0.00
+Eval num_timesteps=70000, episode_reward=0.01 +/- 0.01
+Episode length: 500.00 +/- 0.00
+Eval num_timesteps=80000, episode_reward=-0.08 +/- 0.08
+Episode length: 500.00 +/- 0.00
+Eval num_timesteps=90000, episode_reward=0.04 +/- 0.06
+Episode length: 500.00 +/- 0.00
+Eval num_timesteps=100000, episode_reward=0.00 +/- 0.01
+Episode length: 500.00 +/- 0.00
+Eval num_timesteps=110000, episode_reward=-0.01 +/- 0.14
+Episode length: 500.00 +/- 0.00
+Eval num_timesteps=120000, episode_reward=-0.11 +/- 0.14
+Episode length: 500.00 +/- 0.00
+Eval num_timesteps=130000, episode_reward=-0.05 +/- 0.15
+Episode length: 500.00 +/- 0.00
+Eval num_timesteps=140000, episode_reward=0.06 +/- 0.11
+Episode length: 500.00 +/- 0.00
+Eval num_timesteps=150000, episode_reward=-0.04 +/- 0.09
+Episode length: 500.00 +/- 0.00
+Eval num_timesteps=160000, episode_reward=0.10 +/- 0.11
+Episode length: 500.00 +/- 0.00
+Eval num_timesteps=170000, episode_reward=0.05 +/- 0.12
+Episode length: 500.00 +/- 0.00
+Eval num_timesteps=180000, episode_reward=0.07 +/- 0.13
+Episode length: 500.00 +/- 0.00
+Eval num_timesteps=190000, episode_reward=-0.07 +/- 0.19
+Episode length: 500.00 +/- 0.00
+Eval num_timesteps=200000, episode_reward=0.00 +/- 0.00
+Episode length: 500.00 +/- 0.00
+Eval num_timesteps=210000, episode_reward=0.00 +/- 0.00
+Episode length: 500.00 +/- 0.00
+Eval num_timesteps=220000, episode_reward=0.22 +/- 0.79
+Episode length: 502.40 +/- 4.80
+New best mean reward!
+Eval num_timesteps=230000, episode_reward=0.28 +/- 0.26
+Episode length: 507.40 +/- 14.80
+New best mean reward!
+Eval num_timesteps=240000, episode_reward=-0.03 +/- 0.23
+Episode length: 500.00 +/- 0.00
+Eval num_timesteps=250000, episode_reward=0.31 +/- 0.57
+Episode length: 510.00 +/- 20.00
+New best mean reward!
+Eval num_timesteps=260000, episode_reward=0.00 +/- 0.01
+Episode length: 500.00 +/- 0.00
+Eval num_timesteps=270000, episode_reward=0.13 +/- 0.20
+Episode length: 500.00 +/- 0.00
+Eval num_timesteps=280000, episode_reward=0.58 +/- 0.72
+Episode length: 508.60 +/- 17.20
+New best mean reward!
+Eval num_timesteps=290000, episode_reward=0.08 +/- 0.16
+Episode length: 500.00 +/- 0.00
+Traceback (most recent call last):
+  File "C:\Users\tzehl\OneDrive\Dokumente\GitHub\Stauby-the-Rocket-League-Bot\train.py", line 53, in <module>
+    model.learn(total_timesteps=1e7, callback=callback)
+  File "C:\Users\tzehl\OneDrive\Dokumente\GitHub\schmalegg_hbf_abfahrt\venv\lib\site-packages\stable_baselines3\ppo\ppo.py", line 299, in learn
+    return super(PPO, self).learn(
+  File "C:\Users\tzehl\OneDrive\Dokumente\GitHub\schmalegg_hbf_abfahrt\venv\lib\site-packages\stable_baselines3\common\on_policy_algorithm.py", line 257, in learn
+    self.train()
+  File "C:\Users\tzehl\OneDrive\Dokumente\GitHub\schmalegg_hbf_abfahrt\venv\lib\site-packages\stable_baselines3\ppo\ppo.py", line 199, in train
+    values, log_prob, entropy = self.policy.evaluate_actions(rollout_data.observations, actions)
+  File "C:\Users\tzehl\OneDrive\Dokumente\GitHub\Stauby-the-Rocket-League-Bot\actor_critic.py", line 65, in evaluate_actions
+    distribution = self.action_dist.proba_distribution(actions, self.log_std)
+  File "C:\Users\tzehl\OneDrive\Dokumente\GitHub\schmalegg_hbf_abfahrt\venv\lib\site-packages\stable_baselines3\common\distributions.py", line 152, in proba_distribution
+    self.distribution = Normal(mean_actions, action_std)
+  File "C:\Users\tzehl\OneDrive\Dokumente\GitHub\schmalegg_hbf_abfahrt\venv\lib\site-packages\torch\distributions\normal.py", line 50, in __init__
+    super(Normal, self).__init__(batch_shape, validate_args=validate_args)
+  File "C:\Users\tzehl\OneDrive\Dokumente\GitHub\schmalegg_hbf_abfahrt\venv\lib\site-packages\torch\distributions\distribution.py", line 55, in __init__
+    raise ValueError(
+ValueError: Expected parameter scale (Tensor of shape (16, 2)) of distribution Normal(loc: torch.Size([16, 2]), scale: torch.Size([16, 2])) to satisfy the constraint GreaterThan(lower_bound=0.0), but found invalid values:
+tensor([[nan, nan],
+        [nan, nan],
+        [nan, nan],
+        [nan, nan],
+        [nan, nan],
+        [nan, nan],
+        [nan, nan],
+        [nan, nan],
+        [nan, nan],
+        [nan, nan],
+        [nan, nan],
+        [nan, nan],
+        [nan, nan],
+        [nan, nan],
+        [nan, nan],
+        [nan, nan]], grad_fn=<MulBackward0>)
