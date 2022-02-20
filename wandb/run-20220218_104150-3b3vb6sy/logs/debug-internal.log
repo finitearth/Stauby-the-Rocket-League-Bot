@@ -1,0 +1,25 @@
+2022-02-18 10:41:51,672 INFO    MainThread:23868 [internal.py:wandb_internal():87] W&B internal server running at pid: 23868, started at: 2022-02-18 10:41:51.668552
+2022-02-18 10:41:51,674 INFO    WriterThread:23868 [datastore.py:open_for_write():77] open: C:\Users\tzehl\OneDrive\Dokumente\GitHub\Stauby-the-Rocket-League-Bot\wandb\run-20220218_104150-3b3vb6sy\run-3b3vb6sy.wandb
+2022-02-18 10:41:51,674 DEBUG   HandlerThread:23868 [handler.py:handle_request():130] handle_request: check_version
+2022-02-18 10:41:51,679 DEBUG   SenderThread:23868 [sender.py:send():238] send: header
+2022-02-18 10:41:51,679 DEBUG   SenderThread:23868 [sender.py:send_request():252] send_request: check_version
+2022-02-18 10:41:51,863 DEBUG   SenderThread:23868 [sender.py:send():238] send: run
+2022-02-18 10:41:52,122 DEBUG   HandlerThread:23868 [handler.py:handle_request():130] handle_request: run_start
+2022-02-18 10:41:52,126 INFO    SenderThread:23868 [dir_watcher.py:__init__():169] watching files in: C:\Users\tzehl\OneDrive\Dokumente\GitHub\Stauby-the-Rocket-League-Bot\wandb\run-20220218_104150-3b3vb6sy\files
+2022-02-18 10:41:52,126 INFO    SenderThread:23868 [sender.py:_start_run_threads():825] run started: 3b3vb6sy with start time 1645177310
+2022-02-18 10:41:52,126 DEBUG   SenderThread:23868 [sender.py:send():238] send: summary
+2022-02-18 10:41:52,135 DEBUG   HandlerThread:23868 [meta.py:__init__():40] meta init
+2022-02-18 10:41:52,135 DEBUG   HandlerThread:23868 [meta.py:__init__():54] meta init done
+2022-02-18 10:41:52,140 INFO    SenderThread:23868 [sender.py:_save_file():960] saving file wandb-summary.json with policy end
+2022-02-18 10:41:52,140 DEBUG   HandlerThread:23868 [meta.py:probe():214] probe
+2022-02-18 10:41:52,145 DEBUG   HandlerThread:23868 [meta.py:_setup_git():204] setup git
+2022-02-18 10:41:52,217 DEBUG   HandlerThread:23868 [meta.py:_setup_git():211] setup git done
+2022-02-18 10:41:52,217 DEBUG   HandlerThread:23868 [meta.py:_save_pip():58] save pip
+2022-02-18 10:41:52,220 DEBUG   HandlerThread:23868 [meta.py:_save_pip():72] save pip done
+2022-02-18 10:41:52,220 DEBUG   HandlerThread:23868 [meta.py:probe():252] probe done
+2022-02-18 10:41:52,223 DEBUG   SenderThread:23868 [sender.py:send():238] send: files
+2022-02-18 10:41:52,223 INFO    SenderThread:23868 [sender.py:_save_file():960] saving file wandb-metadata.json with policy now
+2022-02-18 10:41:52,231 DEBUG   HandlerThread:23868 [handler.py:handle_request():130] handle_request: stop_status
+2022-02-18 10:41:52,231 DEBUG   SenderThread:23868 [sender.py:send_request():252] send_request: stop_status
+2022-02-18 10:41:52,723 WARNING MainThread:23868 [internal.py:wandb_internal():146] Internal process interrupt: 1
+2022-02-18 10:41:52,875 INFO    Thread-17 :23868 [upload_job.py:push():137] Uploaded file C:\Users\tzehl\AppData\Local\Temp\tmpbjogso8ewandb\1ncu9s2g-wandb-metadata.json

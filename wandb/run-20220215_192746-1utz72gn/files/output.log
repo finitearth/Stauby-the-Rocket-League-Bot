@@ -1,0 +1,23 @@
+Network set up:
+extractor: Net(
+  (layers): ModuleList(
+    (0): Linear(in_features=7, out_features=16, bias=True)
+    (1): Linear(in_features=16, out_features=16, bias=True)
+    (2): Linear(in_features=16, out_features=8, bias=True)
+  )
+)
+value net: Net(
+  (layers): ModuleList(
+    (0): Linear(in_features=8, out_features=1, bias=True)
+  )
+)
+policy net: Net(
+  (layers): ModuleList(
+    (0): Linear(in_features=8, out_features=2, bias=True)
+  )
+)
+GL HF! :)
+Traceback (most recent call last):
+  File "C:\Users\tzehl\OneDrive\Dokumente\GitHub\Stauby-the-Rocket-League-Bot\train.py", line 58, in <module>
+    model.set_logger(CustomLogger())
+TypeError: 'CustomLogger' object is not callable

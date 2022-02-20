@@ -1,0 +1,145 @@
+2022-02-15 19:27:48,122 INFO    MainThread:7432 [internal.py:wandb_internal():87] W&B internal server running at pid: 7432, started at: 2022-02-15 19:27:48.121710
+2022-02-15 19:27:48,123 INFO    WriterThread:7432 [datastore.py:open_for_write():77] open: C:\Users\tzehl\OneDrive\Dokumente\GitHub\Stauby-the-Rocket-League-Bot\wandb\run-20220215_192746-1utz72gn\run-1utz72gn.wandb
+2022-02-15 19:27:48,124 DEBUG   HandlerThread:7432 [handler.py:handle_request():130] handle_request: check_version
+2022-02-15 19:27:48,126 DEBUG   SenderThread:7432 [sender.py:send():238] send: header
+2022-02-15 19:27:48,126 DEBUG   SenderThread:7432 [sender.py:send_request():252] send_request: check_version
+2022-02-15 19:27:48,309 DEBUG   SenderThread:7432 [sender.py:send():238] send: run
+2022-02-15 19:27:48,590 DEBUG   HandlerThread:7432 [handler.py:handle_request():130] handle_request: run_start
+2022-02-15 19:27:48,597 INFO    SenderThread:7432 [dir_watcher.py:__init__():169] watching files in: C:\Users\tzehl\OneDrive\Dokumente\GitHub\Stauby-the-Rocket-League-Bot\wandb\run-20220215_192746-1utz72gn\files
+2022-02-15 19:27:48,602 INFO    SenderThread:7432 [sender.py:_start_run_threads():825] run started: 1utz72gn with start time 1644949666
+2022-02-15 19:27:48,602 DEBUG   HandlerThread:7432 [meta.py:__init__():40] meta init
+2022-02-15 19:27:48,606 DEBUG   SenderThread:7432 [sender.py:send():238] send: summary
+2022-02-15 19:27:48,606 DEBUG   HandlerThread:7432 [meta.py:__init__():54] meta init done
+2022-02-15 19:27:48,606 DEBUG   HandlerThread:7432 [meta.py:probe():214] probe
+2022-02-15 19:27:48,607 INFO    SenderThread:7432 [sender.py:_save_file():960] saving file wandb-summary.json with policy end
+2022-02-15 19:27:48,616 DEBUG   HandlerThread:7432 [meta.py:_setup_git():204] setup git
+2022-02-15 19:27:48,685 DEBUG   HandlerThread:7432 [meta.py:_setup_git():211] setup git done
+2022-02-15 19:27:48,686 DEBUG   HandlerThread:7432 [meta.py:_save_pip():58] save pip
+2022-02-15 19:27:48,687 DEBUG   HandlerThread:7432 [meta.py:_save_pip():72] save pip done
+2022-02-15 19:27:48,687 DEBUG   HandlerThread:7432 [meta.py:probe():252] probe done
+2022-02-15 19:27:48,694 DEBUG   SenderThread:7432 [sender.py:send():238] send: files
+2022-02-15 19:27:48,694 INFO    SenderThread:7432 [sender.py:_save_file():960] saving file wandb-metadata.json with policy now
+2022-02-15 19:27:48,700 DEBUG   HandlerThread:7432 [handler.py:handle_request():130] handle_request: stop_status
+2022-02-15 19:27:48,700 DEBUG   SenderThread:7432 [sender.py:send_request():252] send_request: stop_status
+2022-02-15 19:27:49,476 INFO    Thread-17 :7432 [upload_job.py:push():137] Uploaded file C:\Users\tzehl\AppData\Local\Temp\tmpo6fqd2qgwandb\333nhtn6-wandb-metadata.json
+2022-02-15 19:27:49,607 INFO    Thread-12 :7432 [dir_watcher.py:_on_file_created():217] file/dir created: C:\Users\tzehl\OneDrive\Dokumente\GitHub\Stauby-the-Rocket-League-Bot\wandb\run-20220215_192746-1utz72gn\files\wandb-metadata.json
+2022-02-15 19:27:49,607 INFO    Thread-12 :7432 [dir_watcher.py:_on_file_created():217] file/dir created: C:\Users\tzehl\OneDrive\Dokumente\GitHub\Stauby-the-Rocket-League-Bot\wandb\run-20220215_192746-1utz72gn\files\requirements.txt
+2022-02-15 19:27:49,607 INFO    Thread-12 :7432 [dir_watcher.py:_on_file_created():217] file/dir created: C:\Users\tzehl\OneDrive\Dokumente\GitHub\Stauby-the-Rocket-League-Bot\wandb\run-20220215_192746-1utz72gn\files\wandb-summary.json
+2022-02-15 19:27:49,607 INFO    Thread-12 :7432 [dir_watcher.py:_on_file_created():217] file/dir created: C:\Users\tzehl\OneDrive\Dokumente\GitHub\Stauby-the-Rocket-League-Bot\wandb\run-20220215_192746-1utz72gn\files\output.log
+2022-02-15 19:28:03,947 DEBUG   HandlerThread:7432 [handler.py:handle_request():130] handle_request: stop_status
+2022-02-15 19:28:03,947 DEBUG   SenderThread:7432 [sender.py:send_request():252] send_request: stop_status
+2022-02-15 19:28:19,516 DEBUG   SenderThread:7432 [sender.py:send():238] send: stats
+2022-02-15 19:28:20,285 DEBUG   HandlerThread:7432 [handler.py:handle_request():130] handle_request: stop_status
+2022-02-15 19:28:20,285 DEBUG   SenderThread:7432 [sender.py:send_request():252] send_request: stop_status
+2022-02-15 19:28:26,935 INFO    Thread-12 :7432 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\tzehl\OneDrive\Dokumente\GitHub\Stauby-the-Rocket-League-Bot\wandb\run-20220215_192746-1utz72gn\files\output.log
+2022-02-15 19:28:27,285 DEBUG   SenderThread:7432 [sender.py:send():238] send: telemetry
+2022-02-15 19:28:27,285 DEBUG   SenderThread:7432 [sender.py:send():238] send: exit
+2022-02-15 19:28:27,285 DEBUG   HandlerThread:7432 [handler.py:handle_request():130] handle_request: poll_exit
+2022-02-15 19:28:27,285 INFO    SenderThread:7432 [sender.py:send_exit():370] handling exit code: 1
+2022-02-15 19:28:27,285 INFO    SenderThread:7432 [sender.py:send_exit():372] handling runtime: 38
+2022-02-15 19:28:27,286 INFO    SenderThread:7432 [sender.py:_save_file():960] saving file wandb-summary.json with policy end
+2022-02-15 19:28:27,286 INFO    SenderThread:7432 [sender.py:send_exit():382] send defer
+2022-02-15 19:28:27,286 DEBUG   SenderThread:7432 [sender.py:send_request():252] send_request: poll_exit
+2022-02-15 19:28:27,287 DEBUG   HandlerThread:7432 [handler.py:handle_request():130] handle_request: defer
+2022-02-15 19:28:27,287 INFO    HandlerThread:7432 [handler.py:handle_request_defer():147] handle defer: 0
+2022-02-15 19:28:27,287 DEBUG   SenderThread:7432 [sender.py:send_request():252] send_request: defer
+2022-02-15 19:28:27,287 INFO    SenderThread:7432 [sender.py:send_request_defer():391] handle sender defer: 0
+2022-02-15 19:28:27,287 INFO    SenderThread:7432 [sender.py:transition_state():395] send defer: 1
+2022-02-15 19:28:27,288 DEBUG   HandlerThread:7432 [handler.py:handle_request():130] handle_request: defer
+2022-02-15 19:28:27,288 INFO    HandlerThread:7432 [handler.py:handle_request_defer():147] handle defer: 1
+2022-02-15 19:28:27,371 DEBUG   SenderThread:7432 [sender.py:send_request():252] send_request: defer
+2022-02-15 19:28:27,371 INFO    SenderThread:7432 [sender.py:send_request_defer():391] handle sender defer: 1
+2022-02-15 19:28:27,371 INFO    SenderThread:7432 [sender.py:transition_state():395] send defer: 2
+2022-02-15 19:28:27,372 DEBUG   SenderThread:7432 [sender.py:send():238] send: stats
+2022-02-15 19:28:27,372 DEBUG   HandlerThread:7432 [handler.py:handle_request():130] handle_request: defer
+2022-02-15 19:28:27,372 INFO    HandlerThread:7432 [handler.py:handle_request_defer():147] handle defer: 2
+2022-02-15 19:28:27,372 DEBUG   SenderThread:7432 [sender.py:send_request():252] send_request: defer
+2022-02-15 19:28:27,372 INFO    SenderThread:7432 [sender.py:send_request_defer():391] handle sender defer: 2
+2022-02-15 19:28:27,372 INFO    SenderThread:7432 [sender.py:transition_state():395] send defer: 3
+2022-02-15 19:28:27,372 DEBUG   HandlerThread:7432 [handler.py:handle_request():130] handle_request: defer
+2022-02-15 19:28:27,372 INFO    HandlerThread:7432 [handler.py:handle_request_defer():147] handle defer: 3
+2022-02-15 19:28:27,372 DEBUG   SenderThread:7432 [sender.py:send():238] send: summary
+2022-02-15 19:28:27,373 INFO    SenderThread:7432 [sender.py:_save_file():960] saving file wandb-summary.json with policy end
+2022-02-15 19:28:27,373 DEBUG   SenderThread:7432 [sender.py:send_request():252] send_request: defer
+2022-02-15 19:28:27,373 INFO    SenderThread:7432 [sender.py:send_request_defer():391] handle sender defer: 3
+2022-02-15 19:28:27,373 INFO    SenderThread:7432 [sender.py:transition_state():395] send defer: 4
+2022-02-15 19:28:27,374 DEBUG   HandlerThread:7432 [handler.py:handle_request():130] handle_request: defer
+2022-02-15 19:28:27,374 INFO    HandlerThread:7432 [handler.py:handle_request_defer():147] handle defer: 4
+2022-02-15 19:28:27,374 DEBUG   SenderThread:7432 [sender.py:send_request():252] send_request: defer
+2022-02-15 19:28:27,374 INFO    SenderThread:7432 [sender.py:send_request_defer():391] handle sender defer: 4
+2022-02-15 19:28:27,394 DEBUG   HandlerThread:7432 [handler.py:handle_request():130] handle_request: poll_exit
+2022-02-15 19:28:27,626 INFO    SenderThread:7432 [sender.py:transition_state():395] send defer: 5
+2022-02-15 19:28:27,626 DEBUG   SenderThread:7432 [sender.py:send_request():252] send_request: poll_exit
+2022-02-15 19:28:27,627 DEBUG   HandlerThread:7432 [handler.py:handle_request():130] handle_request: defer
+2022-02-15 19:28:27,627 INFO    HandlerThread:7432 [handler.py:handle_request_defer():147] handle defer: 5
+2022-02-15 19:28:27,627 DEBUG   SenderThread:7432 [sender.py:send_request():252] send_request: defer
+2022-02-15 19:28:27,627 INFO    SenderThread:7432 [sender.py:send_request_defer():391] handle sender defer: 5
+2022-02-15 19:28:27,627 INFO    SenderThread:7432 [dir_watcher.py:finish():283] shutting down directory watcher
+2022-02-15 19:28:27,741 DEBUG   HandlerThread:7432 [handler.py:handle_request():130] handle_request: poll_exit
+2022-02-15 19:28:27,948 INFO    SenderThread:7432 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\tzehl\OneDrive\Dokumente\GitHub\Stauby-the-Rocket-League-Bot\wandb\run-20220215_192746-1utz72gn\files\config.yaml
+2022-02-15 19:28:27,948 INFO    SenderThread:7432 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\tzehl\OneDrive\Dokumente\GitHub\Stauby-the-Rocket-League-Bot\wandb\run-20220215_192746-1utz72gn\files\wandb-summary.json
+2022-02-15 19:28:27,948 INFO    SenderThread:7432 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\tzehl\OneDrive\Dokumente\GitHub\Stauby-the-Rocket-League-Bot\wandb\run-20220215_192746-1utz72gn\files\output.log
+2022-02-15 19:28:27,949 INFO    SenderThread:7432 [dir_watcher.py:finish():313] scan: C:\Users\tzehl\OneDrive\Dokumente\GitHub\Stauby-the-Rocket-League-Bot\wandb\run-20220215_192746-1utz72gn\files
+2022-02-15 19:28:27,949 INFO    SenderThread:7432 [dir_watcher.py:finish():327] scan save: C:\Users\tzehl\OneDrive\Dokumente\GitHub\Stauby-the-Rocket-League-Bot\wandb\run-20220215_192746-1utz72gn\files\config.yaml config.yaml
+2022-02-15 19:28:27,949 INFO    SenderThread:7432 [dir_watcher.py:finish():327] scan save: C:\Users\tzehl\OneDrive\Dokumente\GitHub\Stauby-the-Rocket-League-Bot\wandb\run-20220215_192746-1utz72gn\files\output.log output.log
+2022-02-15 19:28:27,950 INFO    SenderThread:7432 [dir_watcher.py:finish():327] scan save: C:\Users\tzehl\OneDrive\Dokumente\GitHub\Stauby-the-Rocket-League-Bot\wandb\run-20220215_192746-1utz72gn\files\requirements.txt requirements.txt
+2022-02-15 19:28:27,954 INFO    SenderThread:7432 [dir_watcher.py:finish():327] scan save: C:\Users\tzehl\OneDrive\Dokumente\GitHub\Stauby-the-Rocket-League-Bot\wandb\run-20220215_192746-1utz72gn\files\wandb-metadata.json wandb-metadata.json
+2022-02-15 19:28:27,954 INFO    SenderThread:7432 [dir_watcher.py:finish():327] scan save: C:\Users\tzehl\OneDrive\Dokumente\GitHub\Stauby-the-Rocket-League-Bot\wandb\run-20220215_192746-1utz72gn\files\wandb-summary.json wandb-summary.json
+2022-02-15 19:28:27,957 INFO    SenderThread:7432 [sender.py:transition_state():395] send defer: 6
+2022-02-15 19:28:27,958 DEBUG   SenderThread:7432 [sender.py:send_request():252] send_request: poll_exit
+2022-02-15 19:28:27,960 DEBUG   HandlerThread:7432 [handler.py:handle_request():130] handle_request: defer
+2022-02-15 19:28:27,960 INFO    HandlerThread:7432 [handler.py:handle_request_defer():147] handle defer: 6
+2022-02-15 19:28:27,962 DEBUG   SenderThread:7432 [sender.py:send_request():252] send_request: defer
+2022-02-15 19:28:27,962 INFO    SenderThread:7432 [sender.py:send_request_defer():391] handle sender defer: 6
+2022-02-15 19:28:27,962 INFO    SenderThread:7432 [file_pusher.py:finish():177] shutting down file pusher
+2022-02-15 19:28:28,072 DEBUG   HandlerThread:7432 [handler.py:handle_request():130] handle_request: poll_exit
+2022-02-15 19:28:28,073 DEBUG   SenderThread:7432 [sender.py:send_request():252] send_request: poll_exit
+2022-02-15 19:28:28,184 DEBUG   HandlerThread:7432 [handler.py:handle_request():130] handle_request: poll_exit
+2022-02-15 19:28:28,184 DEBUG   SenderThread:7432 [sender.py:send_request():252] send_request: poll_exit
+2022-02-15 19:28:28,294 DEBUG   HandlerThread:7432 [handler.py:handle_request():130] handle_request: poll_exit
+2022-02-15 19:28:28,294 DEBUG   SenderThread:7432 [sender.py:send_request():252] send_request: poll_exit
+2022-02-15 19:28:28,405 DEBUG   HandlerThread:7432 [handler.py:handle_request():130] handle_request: poll_exit
+2022-02-15 19:28:28,406 DEBUG   SenderThread:7432 [sender.py:send_request():252] send_request: poll_exit
+2022-02-15 19:28:28,517 DEBUG   HandlerThread:7432 [handler.py:handle_request():130] handle_request: poll_exit
+2022-02-15 19:28:28,517 DEBUG   SenderThread:7432 [sender.py:send_request():252] send_request: poll_exit
+2022-02-15 19:28:28,629 DEBUG   HandlerThread:7432 [handler.py:handle_request():130] handle_request: poll_exit
+2022-02-15 19:28:28,629 DEBUG   SenderThread:7432 [sender.py:send_request():252] send_request: poll_exit
+2022-02-15 19:28:28,654 INFO    Thread-19 :7432 [upload_job.py:push():137] Uploaded file C:\Users\tzehl\OneDrive\Dokumente\GitHub\Stauby-the-Rocket-League-Bot\wandb\run-20220215_192746-1utz72gn\files\output.log
+2022-02-15 19:28:28,656 INFO    Thread-21 :7432 [upload_job.py:push():137] Uploaded file C:\Users\tzehl\OneDrive\Dokumente\GitHub\Stauby-the-Rocket-League-Bot\wandb\run-20220215_192746-1utz72gn\files\wandb-summary.json
+2022-02-15 19:28:28,665 INFO    Thread-20 :7432 [upload_job.py:push():137] Uploaded file C:\Users\tzehl\OneDrive\Dokumente\GitHub\Stauby-the-Rocket-League-Bot\wandb\run-20220215_192746-1utz72gn\files\requirements.txt
+2022-02-15 19:28:28,671 INFO    Thread-18 :7432 [upload_job.py:push():137] Uploaded file C:\Users\tzehl\OneDrive\Dokumente\GitHub\Stauby-the-Rocket-League-Bot\wandb\run-20220215_192746-1utz72gn\files\config.yaml
+2022-02-15 19:28:28,741 DEBUG   HandlerThread:7432 [handler.py:handle_request():130] handle_request: poll_exit
+2022-02-15 19:28:28,741 DEBUG   SenderThread:7432 [sender.py:send_request():252] send_request: poll_exit
+2022-02-15 19:28:28,851 DEBUG   HandlerThread:7432 [handler.py:handle_request():130] handle_request: poll_exit
+2022-02-15 19:28:28,851 DEBUG   SenderThread:7432 [sender.py:send_request():252] send_request: poll_exit
+2022-02-15 19:28:28,882 INFO    Thread-11 :7432 [sender.py:transition_state():395] send defer: 7
+2022-02-15 19:28:28,882 DEBUG   HandlerThread:7432 [handler.py:handle_request():130] handle_request: defer
+2022-02-15 19:28:28,883 INFO    HandlerThread:7432 [handler.py:handle_request_defer():147] handle defer: 7
+2022-02-15 19:28:28,883 DEBUG   SenderThread:7432 [sender.py:send_request():252] send_request: defer
+2022-02-15 19:28:28,883 INFO    SenderThread:7432 [sender.py:send_request_defer():391] handle sender defer: 7
+2022-02-15 19:28:28,961 DEBUG   HandlerThread:7432 [handler.py:handle_request():130] handle_request: poll_exit
+2022-02-15 19:28:29,271 INFO    SenderThread:7432 [sender.py:transition_state():395] send defer: 8
+2022-02-15 19:28:29,271 DEBUG   SenderThread:7432 [sender.py:send_request():252] send_request: poll_exit
+2022-02-15 19:28:29,271 DEBUG   HandlerThread:7432 [handler.py:handle_request():130] handle_request: defer
+2022-02-15 19:28:29,272 INFO    HandlerThread:7432 [handler.py:handle_request_defer():147] handle defer: 8
+2022-02-15 19:28:29,272 DEBUG   SenderThread:7432 [sender.py:send_request():252] send_request: defer
+2022-02-15 19:28:29,272 INFO    SenderThread:7432 [sender.py:send_request_defer():391] handle sender defer: 8
+2022-02-15 19:28:29,272 INFO    SenderThread:7432 [sender.py:transition_state():395] send defer: 9
+2022-02-15 19:28:29,272 DEBUG   SenderThread:7432 [sender.py:send():238] send: final
+2022-02-15 19:28:29,273 DEBUG   SenderThread:7432 [sender.py:send():238] send: footer
+2022-02-15 19:28:29,273 DEBUG   HandlerThread:7432 [handler.py:handle_request():130] handle_request: defer
+2022-02-15 19:28:29,273 INFO    HandlerThread:7432 [handler.py:handle_request_defer():147] handle defer: 9
+2022-02-15 19:28:29,273 DEBUG   SenderThread:7432 [sender.py:send_request():252] send_request: defer
+2022-02-15 19:28:29,273 INFO    SenderThread:7432 [sender.py:send_request_defer():391] handle sender defer: 9
+2022-02-15 19:28:29,383 DEBUG   HandlerThread:7432 [handler.py:handle_request():130] handle_request: poll_exit
+2022-02-15 19:28:29,384 DEBUG   SenderThread:7432 [sender.py:send_request():252] send_request: poll_exit
+2022-02-15 19:28:29,384 INFO    SenderThread:7432 [file_pusher.py:join():182] waiting for file pusher
+2022-02-15 19:28:29,873 DEBUG   HandlerThread:7432 [handler.py:handle_request():130] handle_request: get_summary
+2022-02-15 19:28:29,874 DEBUG   HandlerThread:7432 [handler.py:handle_request():130] handle_request: sampled_history
+2022-02-15 19:28:29,875 DEBUG   HandlerThread:7432 [handler.py:handle_request():130] handle_request: shutdown
+2022-02-15 19:28:29,875 INFO    HandlerThread:7432 [handler.py:finish():731] shutting down handler
+2022-02-15 19:28:30,274 INFO    WriterThread:7432 [datastore.py:close():281] close: C:\Users\tzehl\OneDrive\Dokumente\GitHub\Stauby-the-Rocket-League-Bot\wandb\run-20220215_192746-1utz72gn\run-1utz72gn.wandb
+2022-02-15 19:28:30,879 INFO    SenderThread:7432 [sender.py:finish():1091] shutting down sender
+2022-02-15 19:28:30,879 INFO    SenderThread:7432 [file_pusher.py:finish():177] shutting down file pusher
+2022-02-15 19:28:30,879 INFO    SenderThread:7432 [file_pusher.py:join():182] waiting for file pusher
+2022-02-15 19:28:30,882 INFO    MainThread:7432 [internal.py:handle_exit():77] Internal process exited

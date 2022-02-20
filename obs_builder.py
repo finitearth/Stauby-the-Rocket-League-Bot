@@ -50,7 +50,7 @@ def get_polar(diff_vec):
 class PolarObsBuilder(CustomObsBuilder):
     def __init__(self):
         super().__init__()
-        self.obs_dim = 7
+        self.obs_dim = 9
 
     def build_obs(self, player, state, previous_action):
         inverted = player.team_num == common_values.ORANGE_TEAM
@@ -65,11 +65,11 @@ class PolarObsBuilder(CustomObsBuilder):
 
         car_ball_vec = player_car.position - ball.position
         car_ball_dist, car_ball_ang = get_polar(car_ball_vec)
-        car_ball_ang -= player_angle
+        car_ball_ang = (car_ball_ang - player_angle) % 6.28# - 3.14
 
         car_goal_vec = player_car.position - GOAL_POSITION
         car_goal_dist, car_goal_ang = get_polar(car_goal_vec)
-        car_goal_ang = (car_goal_ang - player_angle) % 6.28 - 3.14
+        car_goal_ang = (car_goal_ang - player_angle) % 6.28 #- 3.14
 
         hitting_next_wall_in = calculate_distance_to_wall(player_car.position)
 
@@ -77,8 +77,8 @@ class PolarObsBuilder(CustomObsBuilder):
             hitting_next_wall_in,
             player_linear_vel,
             player_ang_vel,
-            # player_angle,
-            # ball_vel,
+            player_angle,
+            ball_vel,
             car_ball_ang,
             car_ball_dist,
             car_goal_ang,

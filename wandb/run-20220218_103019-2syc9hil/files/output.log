@@ -1,0 +1,30 @@
+Network set up:
+extractor: Net(
+  (layers): ModuleList(
+    (0): Linear(in_features=9, out_features=8, bias=True)
+    (1): Linear(in_features=8, out_features=8, bias=True)
+    (2): Linear(in_features=8, out_features=4, bias=True)
+  )
+)
+value net: Net(
+  (layers): ModuleList(
+    (0): Linear(in_features=4, out_features=1, bias=True)
+  )
+)
+policy net: Net(
+  (layers): ModuleList(
+    (0): Linear(in_features=4, out_features=5, bias=True)
+  )
+)
+GL HF! :)
+Eval num_timesteps=10000, episode_reward=-2.52 +/- 2.52
+Episode length: 878.20 +/- 256.40
+New best mean reward!
+Eval num_timesteps=20000, episode_reward=-4.02 +/- 0.01
+Episode length: 750.00 +/- 0.00
+Eval num_timesteps=30000, episode_reward=-2.88 +/- 1.56
+Episode length: 872.40 +/- 203.67
+Eval num_timesteps=40000, episode_reward=37.95 +/- 82.77
+Episode length: 740.00 +/- 20.00
+New best mean reward!
+Eval num_timesteps=50000, episode_reward=-0.93 +/- 1.61

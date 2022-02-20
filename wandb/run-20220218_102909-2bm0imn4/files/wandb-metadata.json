@@ -1,0 +1,22 @@
+{
+    "os": "Windows-10-10.0.19042-SP0",
+    "python": "3.9.7",
+    "heartbeatAt": "2022-02-18T09:29:11.690183",
+    "startedAt": "2022-02-18T09:29:09.872388",
+    "docker": null,
+    "cpu_count": 8,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "C:\\Users\\tzehl\\OneDrive\\Dokumente\\GitHub\\Stauby-the-Rocket-League-Bot\\train.py",
+    "codePath": "train.py",
+    "git": {
+        "remote": "https://github.com/finitearth/Stauby-the-Rocket-League-Bot.git",
+        "commit": "daab0f63807338ad09fa7afbe025b7c1060ed4bd"
+    },
+    "email": "t.zehle@gmail.com",
+    "root": "C:/Users/tzehl/OneDrive/Dokumente/GitHub/Stauby-the-Rocket-League-Bot",
+    "host": "TZe",
+    "username": "tzehl",
+    "executable": "C:\\Users\\tzehl\\OneDrive\\Dokumente\\GitHub\\schmalegg_hbf_abfahrt\\venv\\Scripts\\python.exe"
+}

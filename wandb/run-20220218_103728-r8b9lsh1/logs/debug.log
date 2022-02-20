@@ -1,0 +1,14 @@
+2022-02-18 10:37:28,994 INFO    MainThread:8440 [wandb_setup.py:_flush():71] setting env: {}
+2022-02-18 10:37:28,994 INFO    MainThread:8440 [wandb_setup.py:_flush():71] setting login settings: {}
+2022-02-18 10:37:28,994 INFO    MainThread:8440 [wandb_init.py:_log_setup():371] Logging user logs to C:\Users\tzehl\OneDrive\Dokumente\GitHub\Stauby-the-Rocket-League-Bot\wandb\run-20220218_103728-r8b9lsh1\logs\debug.log
+2022-02-18 10:37:28,994 INFO    MainThread:8440 [wandb_init.py:_log_setup():372] Logging internal logs to C:\Users\tzehl\OneDrive\Dokumente\GitHub\Stauby-the-Rocket-League-Bot\wandb\run-20220218_103728-r8b9lsh1\logs\debug-internal.log
+2022-02-18 10:37:28,994 INFO    MainThread:8440 [wandb_init.py:init():404] calling init triggers
+2022-02-18 10:37:28,997 INFO    MainThread:8440 [wandb_init.py:init():409] wandb.init called with sweep_config: {}
+config: {}
+2022-02-18 10:37:28,997 INFO    MainThread:8440 [wandb_init.py:init():449] starting backend
+2022-02-18 10:37:28,997 INFO    MainThread:8440 [backend.py:_multiprocessing_setup():95] multiprocessing start_methods=spawn, using: spawn
+2022-02-18 10:37:29,002 INFO    MainThread:8440 [backend.py:ensure_launched():199] starting backend process...
+2022-02-18 10:37:29,075 INFO    MainThread:8440 [backend.py:ensure_launched():204] started backend process with pid: 18864
+2022-02-18 10:37:29,075 INFO    MainThread:8440 [wandb_init.py:init():458] backend started and connected
+2022-02-18 10:37:29,075 INFO    MainThread:8440 [wandb_init.py:init():519] updated telemetry
+2022-02-18 10:37:29,111 INFO    MainThread:8440 [wandb_init.py:init():549] communicating current version

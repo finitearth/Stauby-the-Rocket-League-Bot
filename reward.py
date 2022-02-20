@@ -1,6 +1,6 @@
 import numpy as np
 from rlgym.utils.reward_functions.common_rewards import LiuDistanceBallToGoalReward, VelocityPlayerToBallReward, \
-    SaveBoostReward, EventReward, FaceBallReward
+    SaveBoostReward, EventReward, FaceBallReward, LiuDistancePlayerToBallReward
 from rlgym.utils import RewardFunction
 from rlgym.utils.common_values import CEILING_Z, BALL_MAX_SPEED, CAR_MAX_SPEED, BLUE_TEAM, BLUE_GOAL_BACK, \
     BLUE_GOAL_CENTER, ORANGE_GOAL_BACK, ORANGE_GOAL_CENTER, BALL_RADIUS, ORANGE_TEAM
@@ -16,11 +16,8 @@ MAX_DRIVING_SPEED = 1410
 class Reward(RewardFunction):
     def __init__(self, own_goal=False):
         super().__init__()
-        self.liu = LiuDistanceBallToGoalReward()
-        self.vel = VelocityPlayerToBallReward(use_scalar_projection=True)
-        # self.boost = SaveBoostReward()
-        self.goal = EventReward(team_goal=5., concede=-1., touch=1., shot=10., save=0., demo=0.)
-        # self.driving_to_ball = FaceBallReward()
+        self.ball_goal = LiuDistanceBallToGoalReward()
+        self.goal = EventReward(team_goal=1000., concede=-5., touch=5., shot=5., save=0., demo=0.)
         self.last_state_quality = None
 
     def get_reward(self, player, state, previous_action):
@@ -33,22 +30,19 @@ class Reward(RewardFunction):
 
     def get_state_quality(self, player, state, previous_action):
         dist_to_wall = utils.calculate_distance_to_wall(player.car_data.position)
-        dist_to_wall_quality = -np.exp(1 - .05*dist_to_wall)/3 if dist_to_wall < 30 else 0
-        liu_reward = self.liu.get_reward(player, state, previous_action)/3
-        vel_reward = self.vel.get_reward(player, state, previous_action)/24.8
-        # boost_reward = self.boost.get_reward(player, state, previous_action)
-        # driving_reward = -self.driving_to_ball.get_reward(player, state, previous_action) # Minus weil wegen ka
+        dist_to_wall_quality = np.exp(.01*dist_to_wall)/7.4 if dist_to_wall < 200 else 1
+        liu_reward = self.ball_goal.get_reward(player, state, previous_action)
+        ball_car_dist = np.linalg.norm(player.car_data.position - state.ball.position) - BALL_RADIUS
+        ball_car_dist_reward = np.exp(-0.5 * ball_car_dist)#/ CAR_MAX_SPEED
+        if state.ball.linear_velocity.sum() != 0: ball_car_dist_reward = 1
+        quality =  liu_reward*5 + ball_car_dist_reward*10 + dist_to_wall_quality
 
-        quality =  liu_reward + vel_reward + dist_to_wall_quality # + .1 * driving_reward#.0 * boost_reward +
         return quality
 
     def reset(self, initial_state):
         self.last_state_quality = None
-        self.liu.reset(initial_state)
-        self.vel.reset(initial_state)
-        # self.boost.reset(initial_state)
+        self.ball_goal.reset(initial_state)
         self.goal.reset(initial_state)
-        # self.driving_to_ball.reset(initial_state)
 
 
 class NectoRewardFunction(RewardFunction):
